@@ -13,11 +13,15 @@ from feishu_doc_creator import FeishuDocCreator
 
 def main():
     # 初始化创建器
-    creator = FeishuDocCreator(
-        app_id='cli_a92c40fae038dbde',
-        app_secret='USpxv0LPvEcNB6ofv3iW6fA07NIGQ76J',
-        space_id='7613425678519634889'
-    )
+    # ⚠️ 重要：不要在此处硬编码凭证！
+    # 请从环境变量或凭证文件读取
+    creator = FeishuDocCreator.from_credentials()
+    # 或者显式指定（不推荐在代码中硬编码）：
+    # creator = FeishuDocCreator(
+    #     app_id=os.getenv('FEISHU_APP_ID'),
+    #     app_secret=os.getenv('FEISHU_APP_SECRET'),
+    #     space_id=os.getenv('FEISHU_SPACE_ID')
+    # )
     
     # 示例 1：创建简单文档
     print("="*60)
