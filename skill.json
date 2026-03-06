@@ -1,0 +1,42 @@
+{
+  "name": "feishu_doc_creator",
+  "version": "1.0.0",
+  "description": "飞书文档创建助手 - 自动化创建飞书云文档，支持原文链接、图片链接、代码块等",
+  "author": "阿星",
+  "license": "MIT",
+  "keywords": ["feishu", "doc", "creator", "飞书", "文档", "自动化"],
+  "main": "feishu_doc_creator.py",
+  "python_version": ">=3.8",
+  "dependencies": [
+    "requests"
+  ],
+  "features": [
+    "自动获取飞书 API 访问令牌",
+    "在指定知识库创建文档",
+    "批量创建多种类型的块",
+    "强制在文档第一行插入原文链接",
+    "图片链接自动插入到对应位置",
+    "支持粗体、斜体等文本样式",
+    "自动处理 API 频率限制",
+    "块类型支持检测"
+  ],
+  "supported_block_types": [
+    {"type": 2, "name": "Text", "description": "普通文本"},
+    {"type": 12, "name": "Bullet", "description": "无序列表"},
+    {"type": 13, "name": "Ordered", "description": "有序列表"},
+    {"type": 14, "name": "Code", "description": "代码块"},
+    {"type": 15, "name": "Quote", "description": "引用/提示框"},
+    {"type": 22, "name": "Divider", "description": "分割线"}
+  ],
+  "configuration": {
+    "required": ["app_id", "app_secret", "space_id"],
+    "example": "credentials.example.json"
+  },
+  "usage": {
+    "direct": "python feishu_doc_creator.py",
+    "import": "from feishu_doc_creator import FeishuDocCreator",
+    "copaw": "告诉阿星：创建一个飞书文档，标题是 XXX，内容是 XXX"
+  },
+  "created_at": "2026-03-06",
+  "updated_at": "2026-03-06"
+}
